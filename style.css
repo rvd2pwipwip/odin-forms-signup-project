@@ -55,7 +55,7 @@ table {
 :root {
   --accent-color: #596D48;
   --almost-white: #fafafa;
-  --side-hero-width: 30vw;
+  --side-hero-width: 33vw;
   --top-hero-height: 20vh;
   --form-padding: 4vw;
 }
@@ -76,11 +76,40 @@ table {
 } */
 
 .hero {
+  display: flex;
+  flex-direction: column;
   width: 100vw;
   height: 20vh;
-  /* background-color: var(--accent-color); */
+  /* background-image: url(assets/shadman-sakib-KZlhkc4o1tI-unsplash.jpg); */
   background-image: url(assets/halie-west-25xggax4bSA-unsplash.jpg);
   background-size: cover;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  gap: 10%;
+}
+
+.logo .symbol {
+  background-image: url(assets/odin-lined.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  width: 100%;
+  height: 40%;
+}
+
+.logo .signature {
+  text-transform: uppercase;
+  font-family: norse;
+  font-size: 3rem;
+  color: white;
 }
 
 .content {
@@ -173,7 +202,33 @@ input[type='password']:invalid {
   .hero {
     width: var(--side-hero-width);
     height: 100vh;
-    background-color: var(--accent-color);
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: row;
+    background: rgba(0, 0, 0, 0.4);
+    margin-top: 25vh;
+    height: 140px;
+    gap: 0;
+  }
+  
+  .logo .symbol {
+    background-image: url(assets/odin-lined.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: center;
+    width: 7vw;
+    height: 80%;
+  }
+  
+  .logo .signature {
+    text-transform: uppercase;
+    font-family: norse;
+    font-size: 6vw;
+    color: white;
+    padding-top: 1.5vw;
   }
 
   .content {
