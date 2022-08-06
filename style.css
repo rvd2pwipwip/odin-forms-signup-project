@@ -6,7 +6,7 @@
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
+del, dfn, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
@@ -78,6 +78,8 @@ table {
 .hero {
   display: flex;
   flex-direction: column;
+  position: relative;
+  align-items: center;
   width: 100vw;
   height: 20vh;
   /* background-image: url(assets/shadman-sakib-KZlhkc4o1tI-unsplash.jpg); */
@@ -112,14 +114,37 @@ table {
   color: white;
 }
 
+.hero p {
+  font-size: 0.75rem;
+  font-weight: 300;
+  position: absolute;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  bottom: 0;
+  padding: 4px;
+}
+
+.hero a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   height: calc(100vh - var(--top-hero-height));
   width: 100vw;
   background: var(--almost-white);
   overflow-x: hidden; /* hide form shadow on the sides */
+}
+
+.marketing-copy {
+  font-size: large;
+  font-weight: 600;
+  line-height: 1.25em;
+  padding-bottom: 20px;
+  padding-right: 12vw;
+  color: rgba(0, 0, 0, 0.8);
+  padding: var(--form-padding);
 }
 
 /*********************************************************/
@@ -184,6 +209,38 @@ input[type='password']:invalid {
   border: 1px solid crimson;
 }
 
+.submit {
+  position: relative;
+}
+
+form button {
+  position: absolute; /*offset submit button down to footer*/
+  top: 10rem;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  color: white;
+  background-color: var(--accent-color);
+
+  border: none;
+  border-radius: 8px;
+
+  padding: 1rem 2.75rem;
+  cursor: pointer;
+
+  width: 100%;
+}
+
+footer {
+  padding: 6rem 0 1rem var(--form-padding);
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--accent-color);
+}
+
 
 /*********************************************************/
 /* Media Queries */
@@ -233,9 +290,12 @@ input[type='password']:invalid {
 
   .content {
     justify-content: center;
-    flex-direction: column;
     height: 100vh;
     width: calc(100vw - var(--side-hero-width));
+  }
+
+  .marketing-copy {
+    font-size: x-large;
   }
 
   .form-row {
@@ -245,6 +305,15 @@ input[type='password']:invalid {
 
   .form-item {
     width: 20vw;
+  }
+
+  form button {
+    top: 7rem;
+    width: auto;
+  }
+
+  footer {
+    padding: 7rem 0 0 var(--form-padding);
   }
 
 }
